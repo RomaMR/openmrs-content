@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module configVersion="1.2">
+	
+	<!-- Base Module Properties -->
+	<id>openmrs-content-omod</id>
+	<name>OpenMRS Content Module OMOD</name>
+	<version>1.12.0-SNAPSHOT</version>
+	<package>org.openmrs.module.content</package>
+	<author>*</author>
+	<description>
+		OMOD module for Content module of OpenMRS
+	</description>
+
+	<activator>org.openmrs.module.content.BasicModuleActivator</activator>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			webModuleApplicationContext.xml
+		</param-value>
+	</context-param>
+
+	<require_version>${openmrs.platform.version}</require_version>
+
+	<servlet>
+		<servlet-name>contents</servlet-name>
+		<servlet-class>org.openmrs.module.content.web.controller.ContentServlet</servlet-class>
+	</servlet>
+
+	<packagesWithMappedClasses>
+		org.openmrs.module.content.model
+	</packagesWithMappedClasses>
+
+</module>
+
